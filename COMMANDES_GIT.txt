@@ -1,0 +1,63 @@
+# 🚀 Commandes pour créer votre repository GitHub
+
+## Étape par étape
+
+# 1. Créer d'abord le repository sur GitHub (interface web)
+# Aller sur: https://github.com/new
+# Nom: Logger_NI_MAX
+# Description: Application d'acquisition de données NI-DAQmx — PySide6 + pyqtgraph + MVC + QMH
+# Public ou Private: votre choix
+# NE PAS cocher "Initialize with README" (vous en avez déjà un)
+# Cliquer sur "Create repository"
+
+# 2. Ouvrir PowerShell dans le dossier du projet
+cd "C:\TRAVAIL\RepositoriesGithub\Logger_NI_MAX"
+
+# 3. Vérifier si Git est déjà initialisé
+git status
+
+# Si "fatal: not a git repository", initialiser Git:
+git init
+
+# 4. Configurer votre identité (si première fois)
+git config user.name "Votre Nom"
+git config user.email "votre.email@example.com"
+
+# 5. Ajouter tous les fichiers
+git add .
+
+# 6. Vérifier ce qui va être commité
+git status
+
+# 7. Faire le premier commit
+git commit -m "Initial commit: Logger NI v3.0 — PySide6 + pyqtgraph + MVC + QMH + State Machine"
+
+# 8. Connecter au repository GitHub
+# REMPLACER "VOTRE-USERNAME" par votre vrai nom d'utilisateur GitHub
+git remote add origin https://github.com/VOTRE-USERNAME/Logger_NI_MAX.git
+
+# 9. Renommer la branche en main
+git branch -M main
+
+# 10. Pousser vers GitHub
+git push -u origin main
+
+# Quand demandé:
+# Username: votre-username-github
+# Password: votre-personal-access-token (PAS votre mot de passe!)
+
+# ✅ C'est fait! Allez sur https://github.com/VOTRE-USERNAME/Logger_NI_MAX
+
+## Structure du projet
+
+# Logger_NI_MAX/
+# ├── src/                    ← Code source Python (MVC)
+# │   ├── main_logger.py      ← Point d'entrée
+# │   ├── model/               ← DAQModel + DataModel
+# │   ├── view/                ← MainView + style.qss
+# │   ├── controller/          ← MainController + QMHWorker
+# │   └── utils/               ← Config, messages, settings
+# ├── script_compile/         ← Scripts de build et lancement
+# ├── requirements.txt        ← Dépendances Python
+# ├── logger_config.json      ← Préférences utilisateur
+# └── venv_logger_max/        ← Environnement virtuel (ne pas commiter)

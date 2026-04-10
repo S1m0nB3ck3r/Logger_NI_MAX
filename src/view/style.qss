@@ -1,0 +1,378 @@
+/*
+ * Style QSS — Thème Catppuccin Mocha pour Logger NI
+ *
+ * Équivalent LabVIEW : Propriétés d'apparence du Front Panel
+ *   (couleurs, polices, bordures des contrôles et indicateurs)
+ *
+ * En Qt, le QSS (Qt Style Sheets) fonctionne comme le CSS en web :
+ *   - Sélecteur { propriété: valeur; }
+ *   - On cible par type (QPushButton), par nom (#btn_start), par état (:hover)
+ *
+ * Palette Catppuccin Mocha :
+ *   bg_dark    = #1e1e2e   (fond principal)
+ *   bg_medium  = #2b2b3c   (panneaux)
+ *   bg_light   = #363654   (champs de saisie, boutons)
+ *   border     = #45475a   (bordures)
+ *   blue       = #89b4fa   (titres, accents principaux)
+ *   green      = #a6e3a1   (bouton démarrer, succès)
+ *   red        = #f38ba8   (bouton arrêter, erreurs)
+ *   yellow     = #f9e2af   (avertissements)
+ *   purple     = #cba6f7   (sections, accents secondaires)
+ *   text_white = #cdd6f4   (texte principal)
+ *   text_gray  = #a6adc8   (texte secondaire)
+ */
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Fond global                                    */
+/* ═══════════════════════════════════════════════ */
+
+QMainWindow {
+    background-color: #1e1e2e;
+}
+
+QWidget {
+    background-color: transparent;
+    color: #cdd6f4;
+    font-family: "Segoe UI", "Ubuntu", sans-serif;
+    font-size: 10pt;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Panneau gauche                                 */
+/* ═══════════════════════════════════════════════ */
+
+QWidget#left_panel {
+    background-color: #2b2b3c;
+    border-radius: 10px;
+}
+
+QWidget#config_frame,
+QWidget#info_frame {
+    background-color: #1e1e2e;
+    border-radius: 8px;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Labels                                         */
+/* ═══════════════════════════════════════════════ */
+
+QLabel {
+    color: #cdd6f4;
+    background-color: transparent;
+}
+
+QLabel#title_label {
+    color: #89b4fa;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+QLabel#section_config {
+    color: #cba6f7;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+QLabel#section_controls {
+    color: #a6e3a1;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+QLabel#status_value {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+QLabel#buffer_value {
+    color: #f9e2af;
+    font-weight: bold;
+}
+
+QLabel#elapsed_value {
+    color: #a6e3a1;
+    font-weight: bold;
+}
+
+QLabel#field_label {
+    color: #a6adc8;
+    font-size: 9pt;
+}
+
+QLabel#info_detail {
+    color: #a6adc8;
+    font-size: 9pt;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Champs de saisie                               */
+/* ═══════════════════════════════════════════════ */
+
+QLineEdit, QSpinBox, QDoubleSpinBox {
+    background-color: #363654;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+    border-radius: 5px;
+    padding: 5px 8px;
+    selection-background-color: #89b4fa;
+    selection-color: #1e1e2e;
+}
+
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid #89b4fa;
+}
+
+QLineEdit:disabled, QSpinBox:disabled, QDoubleSpinBox:disabled {
+    background-color: #252536;
+    color: #585b70;
+    border-color: #313244;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  ComboBox (sélecteur de tâche)                  */
+/* ═══════════════════════════════════════════════ */
+
+QComboBox {
+    background-color: #363654;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+    border-radius: 5px;
+    padding: 5px 8px;
+    min-height: 20px;
+}
+
+QComboBox:focus {
+    border: 1px solid #89b4fa;
+}
+
+QComboBox:disabled {
+    background-color: #252536;
+    color: #585b70;
+    border-color: #313244;
+}
+
+QComboBox::drop-down {
+    border: none;
+    background: transparent;
+    width: 24px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #cdd6f4;
+    margin-right: 8px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #2b2b3c;
+    color: #cdd6f4;
+    selection-background-color: #89b4fa;
+    selection-color: #1e1e2e;
+    border: 1px solid #45475a;
+    outline: none;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Boutons                                        */
+/* ═══════════════════════════════════════════════ */
+
+QPushButton {
+    background-color: #363654;
+    color: #cdd6f4;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+QPushButton:hover {
+    background-color: #4a4a68;
+}
+
+/* Bouton Démarrer (vert) */
+QPushButton#btn_start {
+    background-color: #a6e3a1;
+    color: #1e1e2e;
+}
+QPushButton#btn_start:hover {
+    background-color: #94d88d;
+}
+QPushButton#btn_start:disabled {
+    background-color: #3a4a38;
+    color: #6a6a6a;
+}
+
+/* Bouton Arrêter (rouge) */
+QPushButton#btn_stop {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+}
+QPushButton#btn_stop:hover {
+    background-color: #eb6f87;
+}
+QPushButton#btn_stop:disabled {
+    background-color: #4a3a3e;
+    color: #6a6a6a;
+}
+
+/* Bouton Parcourir (violet) */
+QPushButton#btn_browse {
+    background-color: #cba6f7;
+    color: #1e1e2e;
+    padding: 5px 12px;
+}
+QPushButton#btn_browse:hover {
+    background-color: #b994f0;
+}
+QPushButton#btn_browse:disabled {
+    background-color: #3a3654;
+    color: #6a6a6a;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Onglets (TabWidget)                            */
+/* ═══════════════════════════════════════════════ */
+
+QTabWidget::pane {
+    background-color: #2b2b3c;
+    border: 1px solid #45475a;
+    border-radius: 8px;
+    top: -1px;
+}
+
+QTabBar::tab {
+    background-color: #363654;
+    color: #a6adc8;
+    padding: 8px 20px;
+    margin-right: 2px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-size: 10pt;
+}
+
+QTabBar::tab:selected {
+    background-color: #2b2b3c;
+    color: #89b4fa;
+    font-weight: bold;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #4a4a68;
+    color: #cdd6f4;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  CheckBox                                       */
+/* ═══════════════════════════════════════════════ */
+
+QCheckBox {
+    color: #cdd6f4;
+    spacing: 6px;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid #45475a;
+    background-color: #363654;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #89b4fa;
+    border-color: #89b4fa;
+}
+
+QCheckBox::indicator:hover {
+    border-color: #89b4fa;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Barre de statut                                */
+/* ═══════════════════════════════════════════════ */
+
+QWidget#status_bar {
+    background-color: #363654;
+    border-radius: 8px;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Séparateurs                                    */
+/* ═══════════════════════════════════════════════ */
+
+QFrame#separator_blue {
+    background-color: #89b4fa;
+    border: none;
+}
+
+QFrame#separator_purple {
+    background-color: #cba6f7;
+    border: none;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  MessageBox / Dialogues                         */
+/* ═══════════════════════════════════════════════ */
+
+QMessageBox {
+    background-color: #2b2b3c;
+}
+
+QMessageBox QLabel {
+    color: #cdd6f4;
+    font-size: 10pt;
+}
+
+QMessageBox QPushButton {
+    min-width: 80px;
+    padding: 6px 16px;
+}
+
+QDialog {
+    background-color: #2b2b3c;
+}
+
+
+/* ═══════════════════════════════════════════════ */
+/*  Scrollbar (pour dropdown, etc.)                */
+/* ═══════════════════════════════════════════════ */
+
+QScrollBar:vertical {
+    background-color: #2b2b3c;
+    width: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #45475a;
+    border-radius: 5px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #89b4fa;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}

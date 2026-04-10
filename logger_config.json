@@ -1,0 +1,9 @@
+{
+    "task_name": "DAQ_simulee",
+    "record_period": 0,
+    "file_prefix": "data_test_",
+    "file_comment": "test_test_test",
+    "last_save_folder": "C:/TRAVAIL/RepositoriesGithub/Logger_NI_MAX/data",
+    "window_geometry": "1400x800",
+    "average_enabled": false
+}
